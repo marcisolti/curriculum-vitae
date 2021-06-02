@@ -16,15 +16,27 @@
     proud dog dad.
     </p>
     <p>
-    as a huge fan of 3D graphics programming and firm believer in browser-based web technologies, i find working on space designer 3D a very exciting opportunity.
+    as a huge fan of 3D graphics programming, and a firm believer in browser-based web technologies, i find working on space designer 3D a very exciting opportunity.
     </p>
-    <p>i made this little html document for YOU, to showcase the stuff i assume people usually showcase in their cv.</p>
-    <p style="padding-top: 30px;">my answer to the interview questions are available <a href="https://gist.github.com/marcisolti/c5159e04421d8f10673999709081c22a">here</a></p>
+    <p>i made this little html document for YOU, to showcase the stuff i assume people usually showcase in their cv:
+    <ul>
+        <li>check out my <a href="#education">education</a> so far,</li>
+        <li>the <a href="#technology">tool&technologies</a> i came across,</li>
+        <li>and the <a href="#projects">projects</a> i did in the past:</li>
+        <ul>
+            <li>a <a href="#dx12">dx12 engine</a></li>
+            <li>the <a href="#lavos">lavos engine</a></li>
+            <li>webgl <a href="#path-tracer">path tracer</a></li>
+            <li><a href="thesis">deformable object simulator</a></li>
+        </ul>
+    </ul>
+    </p> 
+    <p style="padding-top: 30px;">my answers to the interview questions are available <a href="https://gist.github.com/marcisolti/c5159e04421d8f10673999709081c22a">here</a></p>
     <p>you can find me on social media as well:
     <a href="https://www.linkedin.com/in/marcisolti/">linkedin.com/in/marcisolti/</a><br>
     <a href="https://github.com/marcisolti">github.com/marcisolti</a></p>
 
-    <h1 style="padding-top: 20px;">education</h1>
+    <h1 style="padding-top: 20px;" id="education">education</h1>
     <div class="card">
         <div class="eduInfo">
         <h3>budapest university of technology</h3>
@@ -68,7 +80,7 @@
         </div>
     </div>
 
-    <h1>tools & technologies</h1>
+    <h1 id="technology">tools & technologies</h1>
     <div class="card">
         <h3>i'm really good at:</h3>
         <ul>
@@ -110,9 +122,9 @@
         </ul>
     </div>
 
-    <h1>projects</h1>
+    <h1 id="projects">projects</h1>
 
-    <div class="card">
+    <div id="dx12" class="card">
         <h2>a dx12 engine</h2>
         <p>
             my first more 'serious' 'game engine'. 
@@ -135,7 +147,7 @@
         </ul>
     </div>
 
-    <div class="card">
+    <div id="lavos" class="card">
         <h2>the lavos engine</h2>
         <p>i created a small webgl game for the new hungarian invention, the <a href="https://lavosball.com/">lavos ball</a> puzzle. it runs a full custom engine, the only library i used - aside opengl es - is glmatrix. sadly i cannot share the link because of the legal stuff.</p>
         <p>
@@ -151,10 +163,10 @@
         <p>all hand tailored for this very game, developed in less than 6 weeks.</p>
     </div>
 
-    <div class="card">
+    <div id="path-tracer" class="card">
         <h2>webgl path tracer</h2>
         <p>
-            it's always nice to write a path tracer, and it's especially fun to do it in webgl/glsl. as part of a school project, i implemented a two simple global illumination algorithms; you can move around with wasd, q, e, and left click + mouse. 
+            tracing rays == always fun; especially if you do it in webgl/glsl. as part of a school project, i implemented a two simple global illumination algorithms; you can move around with wasd, q, e, and left click + mouse. 
         </p>
         <p>
             this first one features exclusively <a href="./path-tracer/diffuse/index.html">diffuse surfaces</a>. i think this one came out pretty good. those soft shadows! :) a nice exam question could've been why it's so easy to implement this. 
