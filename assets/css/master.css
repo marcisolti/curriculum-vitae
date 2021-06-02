@@ -17,6 +17,10 @@ li {
   padding: 2px;
 }
 
+ul {
+  margin-top: 2px;
+}
+
 .card {
   background-color: #edf2f7;
   padding: 40px;
