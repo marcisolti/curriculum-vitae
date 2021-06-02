@@ -8,7 +8,7 @@
     <title>marci solti cv</title>
     <link rel="stylesheet" href="./assets/css/master.css">
 </head>
-<body>
+<body id="hi">
     <h1>hi there!</h1>
     <p style="font-size: larger;">
     i'm <b>marci solti</b>, fresh graduate mechanical engineer, 
@@ -18,8 +18,13 @@
     <p>
     as a huge fan of 3D graphics programming and firm believer in browser-based web technologies, i find working on space designer 3D a very exciting opportunity.
     </p>
+    <p>i made this little html document for YOU, to showcase the stuff i assume people usually showcase in their cv.</p>
+    <p style="padding-top: 30px;">my answer to the interview questions are available <a href="https://gist.github.com/marcisolti/c5159e04421d8f10673999709081c22a">here</a></p>
+    <p>you can find me on social media as well:
+    <a href="https://www.linkedin.com/in/marcisolti/">linkedin.com/in/marcisolti/</a><br>
+    <a href="https://github.com/marcisolti">github.com/marcisolti</a></p>
 
-    <h1>education</h1>
+    <h1 style="padding-top: 20px;">education</h1>
     <div class="card">
         <div class="eduInfo">
         <h3>budapest university of technology</h3>
@@ -27,7 +32,8 @@
         <p>2019-2021</p>
         </div>
         <b>thesis project</b>:<br>
-        mesh-based deformable objects in computer graphics.
+        mesh-based deformable objects in computer graphics.<br>
+        more info about this <a href="#thesis">here</a>
         <br>
         <br>
         <div>
@@ -107,7 +113,7 @@
     <h1>projects</h1>
 
     <div class="card">
-        <h3>a dx12 engine</h3>
+        <h2>a dx12 engine</h2>
         <p>
             my first more 'serious' 'game engine'. 
         </p>
@@ -123,13 +129,14 @@
         <ul>
             <li>thin layer of directx 12 abstraction</li>
             <li>classic frostbite pbr shaders (from <a href="https://seblagarde.files.wordpress.com/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf">here</a>) with disney diffuse and cook-torrace specular.</li>
+            <li>dynamic light management</li>
             <li>rigid body dynamics with physx</li>
             <li>pure component entity management</li>
         </ul>
     </div>
 
     <div class="card">
-        <h3>the lavos engine</h3>
+        <h2>the lavos engine</h2>
         <p>i created a small webgl game for the new hungarian invention, the <a href="https://lavosball.com/">lavos ball</a> puzzle. it runs a full custom engine, the only library i used - aside opengl es - is glmatrix. sadly i cannot share the link because of the legal stuff.</p>
         <p>
             <b>it features</b>
@@ -145,7 +152,7 @@
     </div>
 
     <div class="card">
-        <h3>webgl path tracer</h3>
+        <h2>webgl path tracer</h2>
         <p>
             it's always nice to write a path tracer, and it's especially fun to do it in webgl/glsl. as part of a school project, i implemented a two simple global illumination algorithms; you can move around with wasd, q, e, and left click + mouse. 
         </p>
@@ -157,15 +164,15 @@
         </p>
     </div>
 
-    <div class="card">
-        <h3>simulating deformables</h3>
+    <div class="card" id="thesis">
+        <h2>simulating deformables</h2>
         <p>
             during my msc in applied mechanics, a big project of mine was exploring the craftsmanship of deformable simulations in the entertainment industry. 
         </p>
         <p>
         of course, i started with the easy stuff - linear models <a href="https://www.youtube.com/watch?v=W4R46_Uljp8">like this</a> - but quickly moved further to the field of nonlinear finite element method and continuum mechanics. i ended up implementing the hyperelastic projected newton solver by pixar, presented <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">here</a>.
         </p>
-        <p>
+        <p style="padding-top: 20px;">
         here is a <b>video</b>;
         </p>
         <p>
@@ -177,7 +184,7 @@
         <p>
         any feedback is more than welcome <a href="mailto:marci.solti.hu@gmail.com">here</a>.
         </p> 
-        <p><b>in a nutshell</b>, if you want compute physics, you need to find some state variables characterizing the system's response - i.e. how much energy (\(\Psi\)) is accumulated in a small cube of material if we squish it to be half the size it was before. 
+        <p style="padding-top: 20px;"><b>in a nutshell</b>, if you want compute physics, you need to find some state variables characterizing the system's response - i.e. how much energy (\(\Psi\)) is accumulated in a small cube of material if we squish it to be half the size it was before. 
         </p>
         <p>    
         if you apply some external forces \(\mathbf{f}_{ext}\) on your deformable, in turn, internal forces \(\mathbf{f}_{int}\) appear inside of it, which is calculated from 
@@ -186,7 +193,7 @@
         $$\mathbf{f}_{int}-\mathbf{f}_{ext} = \mathbf{0}$$
         you can timestep forward in time this equilibrium by plugging it into a newton solver; however it means that you need to take the derivative again, which is going to be the energy hessian, that is
         $$\mathbf{K} = \frac{\partial^2\Psi}{\partial\mathbf{x}^2}$$
-        yes, just take the derivative; again! however, there's an evil professor trick lurking here: \(\mathbf{K}\) is a fourth-order tensor, and some instabilities can appear if try to e.g. squish the little cube too fast, or squish it to the point it becomes a pancake. 
+        however, there's an evil professor trick lurking here: there is a fourth-order tensor embeded inside \(\mathbf{K}\), and some instabilities can appear if try to e.g. squish the little cube too fast, or squish it to the point it becomes a pancake. 
         <p>
         following <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">smith et al.</a>, i went through the painstaking analysis of some specific energy functions to find out that you can also reassemble the whole energy hessian \(\mathbf{K}\) from the eigenvalues \(\mathbf{\Lambda}\) and eigenvectors \(\mathbf{Q}\) of it (as \(\mathbf{K}=\mathbf{Q\Lambda Q}^T\)) which can be aquired in closed form! 
         </p>
@@ -196,10 +203,11 @@
         <p>
         man! all of this might sound suspiciously intellectual for you, but i just copied the equations from the pixar paper and it worked. :)
         </p>
-        
         </p>
-            
-    </div>
 
+        
+    </div>
+    
+    <p style="padding-bottom: 20px;">thank YOU for going through my stuff! :)<br><a href="#hi">go back to the top</a></p>
 </body>
 </html>
