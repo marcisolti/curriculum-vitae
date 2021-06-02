@@ -16,7 +16,7 @@
     proud dog dad.
     </p>
     <p>
-    as a huge fan of 3D graphics programming, and as firm believer in browser-based web technologies, i find working on space designer 3D a very exciting opportunity.
+    as a huge fan of 3D graphics programming and firm believer in browser-based web technologies, i find working on space designer 3D a very exciting opportunity.
     </p>
 
     <h1>education</h1>
@@ -105,6 +105,58 @@
     </div>
 
     <h1>projects</h1>
+
+    <div class="card">
+        <h3>a dx12 engine</h3>
+        <p>
+            my first more 'serious' 'game engine'. 
+        </p>
+        <p>
+            video <a href="https://www.youtube.com/watch?v=7Jp5jkF15BA">here</a>, 
+        </p>        
+        <p>
+            source code <a href="https://github.com/marcisolti/MyFirstLittleEngine">here</a>.
+        </p>
+        <p>
+            <b>it features</b>
+        </p>
+        <ul>
+            <li>thin layer of directx 12 abstraction</li>
+            <li>classic frostbite pbr shaders (from <a href="https://seblagarde.files.wordpress.com/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf">here</a>) with disney diffuse and cook-torrace specular.</li>
+            <li>rigid body dynamics with physx</li>
+            <li>pure component entity management</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>the lavos engine</h3>
+        <p>i created a small webgl game for the new hungarian invention, the <a href="https://lavosball.com/">lavos ball</a> puzzle. it runs a full custom engine, the only library i used - aside opengl es - is glmatrix. sadly i cannot share the link because of the legal stuff.</p>
+        <p>
+            <b>it features</b>
+        </p>
+        <ul>
+            <li>the same frostbite pbr shaders</li>
+            <li>a react ui</li>
+            <li>intuitive user interaction with the puzzle</li>
+            <li>custom animation engine</li>
+            <li>custom collision detection for mouse picking (ray vs. convex hull)</li>
+        </ul>
+        <p>all hand tailored for this very game, developed in less than 6 weeks.</p>
+    </div>
+
+    <div class="card">
+        <h3>webgl path tracer</h3>
+        <p>
+            it's always nice to write a path tracer, and it's especially fun to do it in webgl/glsl. as part of a school project, i implemented a two simple global illumination algorithms; you can move around with wasd, q, e, and left click + mouse. 
+        </p>
+        <p>
+            this first one features exclusively <a href="./path-tracer/diffuse/index.html">diffuse surfaces</a>. i think this one came out pretty good. those soft shadows! :) a nice exam question could've been why it's so easy to implement this. 
+        </p>
+        <p>
+            i also tried to write one with a 'tube' area light with <a href="./path-tracer/virtual-pointlights/index.html">virtual point lights</a>, however, it turned out a bit buggy: it sort of looks like the shadow 'comes back' from infinity... why though? i wasn't able to track down the bug. 
+        </p>
+    </div>
+
     <div class="card">
         <h3>simulating deformables</h3>
         <p>
@@ -123,7 +175,7 @@
         and a highly wip version of my c++/directx 12 <b>simulator</b> here.<br>
         </p>
         <p>
-        any feedback is more than welcome at <a href="mailto:marci.solti.hu@gmail.com">here</a>.
+        any feedback is more than welcome <a href="mailto:marci.solti.hu@gmail.com">here</a>.
         </p> 
         <p><b>in a nutshell</b>, if you want compute physics, you need to find some state variables characterizing the system's response - i.e. how much energy (\(\Psi\)) is accumulated in a small cube of material if we squish it to be half the size it was before. 
         </p>
@@ -136,7 +188,7 @@
         $$\mathbf{K} = \frac{\partial^2\Psi}{\partial\mathbf{x}^2}$$
         yes, just take the derivative; again! however, there's an evil professor trick lurking here: \(\mathbf{K}\) is a fourth-order tensor, and some instabilities can appear if try to e.g. squish the little cube too fast, or squish it to the point it becomes a pancake. 
         <p>
-        following <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">smith et al.</a>, i went through the painstaking analysis of some specific energy functions to find out that you can also reassemble the whole energy hessian \(\mathbf{K}\) from the eigenvalues and eigenvectors of it (as \(\mathbf{K}=\mathbf{Q\Lambda Q}^T\)) which can be aquired in closed form! 
+        following <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">smith et al.</a>, i went through the painstaking analysis of some specific energy functions to find out that you can also reassemble the whole energy hessian \(\mathbf{K}\) from the eigenvalues \(\mathbf{\Lambda}\) and eigenvectors \(\mathbf{Q}\) of it (as \(\mathbf{K}=\mathbf{Q\Lambda Q}^T\)) which can be aquired in closed form! 
         </p>
         <p>
         this is so cool, because the instabilities appear as \(\mathbf{K}\) becomes indefinite, so we need to just clamp the eigenvalue to \(0\) if it's less than \(0\). 
@@ -147,21 +199,6 @@
         
         </p>
             
-    </div>
-
-    <div class="card">
-        <h3>a dx12 engine</h3>
-        stuff here
-    </div>
-
-    <div class="card">
-        <h3>the lavos engine</h3>
-        stuff here
-    </div>
-
-    <div class="card">
-        <h3>webgl path tracer</h3>
-        stuff here
     </div>
 
 </body>
