@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    font-family: Roboto Mono;
+}
+
+body {
+    padding: 20px;
+    margin: auto;
+    width: 600px;
+}
+
+h3 {
+    margin: 0;
+}
+
+li {
+    padding: 2px;
+}
+
+.card {
+    background-color: gainsboro;
+    padding: 40px;
+    margin: 35px 0;
+}
+
+.eduInfo {
+    font-size: larger;
+    padding: 10px 0;
+}
