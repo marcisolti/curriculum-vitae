@@ -18,9 +18,12 @@ li {
 }
 
 .card {
-  background-color: gainsboro;
+  background-color: #edf2f7;
   padding: 40px;
   margin: 35px 0;
+}
+.card h3 {
+  padding-bottom: 15px;
 }
 
 .eduInfo {
