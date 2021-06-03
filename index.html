@@ -214,7 +214,10 @@
         $$\mathbf{K} = \frac{\partial^2\Psi}{\partial\mathbf{x}^2}$$
         however, there's an evil professor trick lurking here: there is a fourth-order tensor embeded inside \(\mathbf{K}\), and some instabilities can appear if try to e.g. squish the little cube too fast, or squish it to the point it becomes a pancake. 
         <p>
-        following <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">smith et al.</a>, i went through the painstaking analysis of some specific energy functions to find out that you can also reassemble the whole energy hessian \(\mathbf{K}\) from the eigenvalues \(\mathbf{\Lambda}\) and eigenvectors \(\mathbf{Q}\) of it (as \(\mathbf{K}=\mathbf{Q\Lambda Q}^T\)) which can be aquired in closed form! 
+        following <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">smith et al.</a>, i went through the painstaking analysis of some specific energy functions to find out that you can reassemble the whole energy hessian \(\mathbf{K}\) from the eigenvalues \(\mathbf{\Lambda}\) and eigenvectors \(\mathbf{Q}\) of it. 
+        <p>
+        the big thing is that the eigendecomposition \(\mathbf{K}=\mathbf{Q\Lambda Q}^T\) is available in closed form, which is super fast compared to the the iterative numerical methods used so far. 
+        </p>
         </p>
         <p>
         this is so cool, because the instabilities appear as \(\mathbf{K}\) becomes indefinite, so we need to just clamp the eigenvalue to \(0\) if it's less than \(0\). 
