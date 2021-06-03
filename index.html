@@ -203,24 +203,24 @@
         <p>
         any feedback is more than welcome <a href="mailto:marci.solti.hu@gmail.com">here</a>.
         </p> 
-        <p style="padding-top: 20px;"><b>in a nutshell</b>, if you want compute physics, you need to find some state variables characterizing the system's response - i.e. how much energy (\(\Psi\)) is accumulated in a small cube of material if we squish it to be half the size it was before. 
+        <p style="padding-top: 20px;"><b>in a nutshell</b>, if you want compute physics, you need to find some state variables characterizing the system's response - in case of deformables, we measure how much energy (\(\Psi\)) is accumulated in a small cube of material, if we e.g. squish it to be half the size it was before. 
         </p>
         <p>    
         if you apply some external forces \(\mathbf{f}_{ext}\) on your deformable, in turn, internal forces \(\mathbf{f}_{int}\) appear inside of it, which is calculated from 
         $$\mathbf{f}_{int} = \frac{\partial \Psi}{\partial\mathbf{x}}$$
-        so easy, just take the derivative! the internal forces equal the energy jacobian. you have now a nice equilibrium
+        so easy, just take the derivative: the internal forces equal the energy jacobian. you have now a nice equilibrium
         $$\mathbf{f}_{int}-\mathbf{f}_{ext} = \mathbf{0}$$
-        you can timestep forward in time this equilibrium by plugging it into a newton solver; however it means that you need to take the derivative again, which is going to be the energy hessian, that is
+        you can timestep forward in time this equilibrium by plugging it into a newton solver; it means that you need to take the derivative again, which is going to be the energy hessian, that is
         $$\mathbf{K} = \frac{\partial^2\Psi}{\partial\mathbf{x}^2}$$
-        however, there's an evil professor trick lurking here: there is a fourth-order tensor embeded inside \(\mathbf{K}\), and some instabilities can appear if try to e.g. squish the little cube too fast, or squish it to the point it becomes a pancake. 
+        basically that's it! however, there's an evil professor trick lurking around here: there is a fourth order tensor embeded inside \(\mathbf{K}\), and some instabilities can appear if try to e.g. squish the little cube too fast, or squish it to the point it becomes a pancake. 
         <p>
         following <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">smith et al.</a>, i went through the painstaking analysis of some specific energy functions to find out that you can reassemble the whole energy hessian \(\mathbf{K}\) from the eigenvalues \(\mathbf{\Lambda}\) and eigenvectors \(\mathbf{Q}\) of it. 
-        <p>
-        the big thing is that the eigendecomposition \(\mathbf{K}=\mathbf{Q\Lambda Q}^T\) is available in closed form, which is super fast compared to the the iterative numerical methods used so far. 
-        </p>
         </p>
         <p>
-        this is so cool, because the instabilities appear as \(\mathbf{K}\) becomes indefinite, so we need to just clamp the eigenvalue to \(0\) if it's less than \(0\). 
+        this is so cool, because the instabilities appear as \(\mathbf{K}\) becomes indefinite, so we need to just clamp the eigenvalue to \(0\) if it's less than \(0\); then reassamble the Hessian as \(\mathbf{K}=\mathbf{Q\Lambda Q}^T\).
+        </p>
+        <p>
+        the big thing is that the eigendecomposition of \(\mathbf{K}\) is available in closed form, which is super fast compared to the the iterative numerical methods used so far. 
         </p>
         <p>
         man! all of this might sound suspiciously intellectual for you, but i just copied the equations from the pixar paper and it worked. :)
