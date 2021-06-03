@@ -10,7 +10,8 @@
 </head>
 <body id="hi">
     <h1>hi there!</h1>
-    <p style="font-size: larger;">
+    <p>
+    <div id="intro">
     i'm <b>marci solti</b>, fresh graduate mechanical engineer, 
     wannabe software engineer, computer graphics and physics sim nerd, 
     proud dog dad.
@@ -18,23 +19,26 @@
     <p>
     as a huge fan of 3D graphics programming, and a firm believer in browser-based web technologies, i find working on space designer 3D a very exciting opportunity.
     </p>
+    </div>
     <p>i made this little html document for YOU, to showcase the stuff i assume people usually showcase in their cv:
     <ul>
         <li>check out my <a href="#education">education</a> so far,</li>
-        <li>the <a href="#technology">tool&technologies</a> i came across,</li>
-        <li>and the <a href="#projects">projects</a> i did in the past:</li>
+        <li>some of the <a href="#technology">tool&technologies</a> i came across,</li>
+        <li>and some <a href="#projects">projects</a> i did in the past:</li>
         <ul>
             <li>a <a href="#dx12">dx12 engine</a></li>
             <li>the <a href="#lavos">lavos engine</a></li>
             <li>webgl <a href="#path-tracer">path tracer</a></li>
-            <li><a href="thesis">deformable object simulator</a></li>
+            <li><a href="#thesis">deformable object simulator</a></li>
         </ul>
     </ul>
     </p> 
-    <p style="padding-top: 30px;">my answers to the interview questions are available <a href="https://gist.github.com/marcisolti/c5159e04421d8f10673999709081c22a">here</a></p>
+    <p style="padding-top: 30px;">my answers to the interview questions are available <a href="https://gist.github.com/marcisolti/c5159e04421d8f10673999709081c22a">here</a>.</p>
     <p>you can find me on social media as well:
     <a href="https://www.linkedin.com/in/marcisolti/">linkedin.com/in/marcisolti/</a><br>
     <a href="https://github.com/marcisolti">github.com/marcisolti</a></p>
+    <p>email:<br>
+    <a href="mailto:marci.solti.hu@gmail.com">marci.solti.hu@gmail.com</a></p>
 
     <h1 style="padding-top: 20px;" id="education">education</h1>
     <div class="card">
@@ -82,7 +86,7 @@
 
     <h1 id="technology">tools & technologies</h1>
     <div class="card">
-        <h3>i'm really good at:</h3>
+        <h3>i consider myself really good at:</h3>
         <ul>
             <li>computer graphics</li>
             <li>c++</li>
@@ -110,7 +114,9 @@
             <li>react</li>
             <li>node.js</li>
             <li>three.js</li>
+            <li>eigen</li>
             <li>cuda</li>
+            <li>intel tbb</li>
             <li>python</li>
             <li>matlab</li>
             <li>blender</li>
@@ -172,7 +178,7 @@
             this first one features exclusively <a href="./path-tracer/diffuse/index.html">diffuse surfaces</a>. i think this one came out pretty good. those soft shadows! :) a nice exam question could've been why it's so easy to implement this. 
         </p>
         <p>
-            i also tried to write one with a 'tube' area light with <a href="./path-tracer/virtual-pointlights/index.html">virtual point lights</a>, however, it turned out a bit buggy: it sort of looks like the shadow 'comes back' from infinity... why though? i wasn't able to track down the bug. 
+            i also tried to write one with a 'tube' area light utilizing <a href="./path-tracer/virtual-pointlights/index.html">virtual point lights</a>, however, it turned out a bit buggy: it sort of looks like the shadow 'comes back' from infinity... why though? i wasn't able to track down the bug. 
         </p>
     </div>
 
@@ -185,13 +191,14 @@
         of course, i started with the easy stuff - linear models <a href="https://www.youtube.com/watch?v=W4R46_Uljp8">like this</a> - but quickly moved further to the field of nonlinear finite element method and continuum mechanics. i ended up implementing the hyperelastic projected newton solver by pixar, presented <a href="https://graphics.pixar.com/library/AnalyticEigensystems/">here</a>.
         </p>
         <p style="padding-top: 20px;">
-        here is a <b>video</b>;
+        <a href="https://www.youtube.com/watch?v=IZHW6Wbtc6A">here</a> is a <b>video</b>;
         </p>
         <p>
         you can get a wip version of my <b>thesis</b> <a href="./marcisolti-hyperelasticFEM.pdf">here</a>,
         </p>
         <p>
-        and a highly wip version of my c++/directx 12 <b>simulator</b> here.<br>
+        and the source will be available soon (not today); <br>
+        altough i walk through the most of it in my thesis (chapter 8)
         </p>
         <p>
         any feedback is more than welcome <a href="mailto:marci.solti.hu@gmail.com">here</a>.
